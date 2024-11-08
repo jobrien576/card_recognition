@@ -1,5 +1,17 @@
-# Requirements file for ReadTheDocs, check .readthedocs.yml.
-# To build the module reference correctly, make sure every external package
-# under `install_requires` in `setup.cfg` is also listed here!
+# Requirements for ReadTheDocs and essential libraries for the project
+
+# Documentation
 sphinx>=3.2.1
-# sphinx_rtd_theme
+sphinx_rtd_theme
+
+# Core Libraries
+tensorflow>=2.0  # For model creation and training
+opencv-python    # For image processing and custom augmentation
+numpy            # For numerical operations and transformations
+pillow           # For image handling (required by TensorFlow)
+
+# Plotting
+matplotlib       # For plotting training history and evaluation results
+
+# Optional: model saving/loading
+h5py             # For saving/loading models in HDF5 format
