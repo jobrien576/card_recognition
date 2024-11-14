@@ -1,5 +1,5 @@
 import unittest
-from model import create_card_classifier, compile_model
+from jo_card_recognition.model import create_card_classifier, compile_model
 from tensorflow.keras.models import Model
 
 class TestModel(unittest.TestCase):
@@ -28,9 +28,9 @@ class TestModel(unittest.TestCase):
         model = create_card_classifier()
         compiled_model = compile_model(model, learning_rate=0.001)
 
-        # Check optimizer type
-        optimizer_name = compiled_model.optimizer._name
-        self.assertEqual(optimizer_name, 'Adam', "Optimizer should be 'Adam'.")
+        # Check optimizer type by inspecting the class name of the optimizer
+        optimizer_class_name = compiled_model.optimizer.__class__.__name__
+        self.assertEqual(optimizer_class_name, 'Adam', "Optimizer should be 'Adam'.")
 
         # Check loss functions for each output
         losses = compiled_model.loss

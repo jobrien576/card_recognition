@@ -1,6 +1,6 @@
 import os
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
-from utils import apply_augmentation  # Import the custom augmentation function
+from jo_card_recognition.utils import apply_augmentation  # Use absolute import
 
 def load_data(data_dir, img_height=256, img_width=256, batch_size=32, validation_split=0.2):
     """
@@ -50,5 +50,5 @@ def load_data(data_dir, img_height=256, img_width=256, batch_size=32, validation
 
 # Example usage:
 if __name__ == "__main__":
-    data_dir = r"C:\Users\jobri\OneDrive - Drexel University\MEM679\cropped_cards_data"
+    data_dir = r"C:\Users\jobri\Documents\679\cropped_cards_data"
     train_gen, val_gen = load_data(data_dir)

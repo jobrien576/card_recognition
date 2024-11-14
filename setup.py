@@ -11,12 +11,16 @@ from setuptools import setup
 
 if __name__ == "__main__":
     try:
-        setup(use_scm_version={"version_scheme": "no-guess-dev"})
-    except:  # noqa
+        setup(
+            use_scm_version={"version_scheme": "no-guess-dev"},
+            package_dir={"": "src"}  # Ensure src directory is recognized
+        )
+    except Exception as e:
         print(
-            "\n\nAn error occurred while building the project, "
-            "please ensure you have the most updated version of setuptools, "
-            "setuptools_scm and wheel with:\n"
+            "\n\nAn error occurred while building the project:\n"
+            f"{e}\n"
+            "Please ensure you have the most updated versions of setuptools, "
+            "setuptools_scm, and wheel with:\n"
             "   pip install -U setuptools setuptools_scm wheel\n\n"
         )
         raise

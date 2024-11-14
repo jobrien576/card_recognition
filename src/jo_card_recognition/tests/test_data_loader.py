@@ -1,12 +1,12 @@
 import unittest
-from data_loader import load_data
+from jo_card_recognition.data_loader import load_data
 import os
 
 class TestDataLoader(unittest.TestCase):
 
     def setUp(self):
         # Setup parameters for testing
-        self.data_dir = r"C:\Users\jobri\OneDrive - Drexel University\MEM679\cropped_cards_data"
+        self.data_dir = r"C:\Users\jobri\Documents\679\cropped_cards_data"
         self.img_height = 256
         self.img_width = 256
         self.batch_size = 32
